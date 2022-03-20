@@ -1,0 +1,38 @@
+<div class="side-nav-bar-main">
+    <mat-toolbar class="dark-theme">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="toggleSidenav()" fxShow="true" fxHide.gt-sm>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="logo"><img src="/assets/img/mainLogo.png" alt=""></span>
+        <span class="menu-spacer"></span>
+        <div fxShow="true" fxHide.lt-md>
+          <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+          <a href="#" mat-button>HOME</a>
+          <a href="#" mat-button>DOWNLOAD</a>
+          <a href="#" mat-button>ABOUT</a>
+          <a href="#" mat-button>GITHUB</a>
+          <a href="#" mat-button>API</a>
+          <a href="#" mat-button>LOGIN</a>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  
+    <mat-sidenav-container fxFlexFill [ngStyle]="{'height':(isShowing)?'90vh':'0vh'}">
+      <mat-sidenav #sidenav mode="side" [(opened)]="isShowing">
+        <mat-nav-list>
+          <!-- <a (click)="toggleSidenav()" href="" mat-list-item>Close</a> -->
+          <a href="#"  mat-list-item>HOME</a>
+          <a href="#" mat-button>DOWNLOAD</a>
+          <a href="#" mat-button>ABOUT</a>
+          <a href="#" mat-button>GITHUB</a>
+          <a href="#" mat-button>API</a>
+          <a href="#" mat-button>LOGIN</a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill>
+         
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+  

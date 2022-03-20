@@ -1,0 +1,58 @@
+<section>
+    <div class="carousel">
+        <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+            <ng-template ngbSlide *ngFor="let image of images">
+              <div class="picsum-img-wrapper">
+                <img [src]="image" alt="Random slide" class="carousel-img">
+              </div>
+              <div class="carousel-caption" fxShow="true" fxHide.lt-lg>
+                <h3>8 PLAYERS PARTY GAME MADNESS</h3>
+                <div class="downloads">
+                      <img src="/assets/img/gpBanner.png" alt="">
+                      <img src="/assets/img/macAppStore.png" alt="">
+                      <img src="/assets/img/amazon-apps-store-us-black2.png" alt="">
+                </div>
+              </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+    <div class="mob-caption" fxShow="true" fxHide.gt-md>
+      8 PLAYERS <br><br>PARTY MADNESS
+      <div class="downloads">
+        <img src="/assets/img/gpBanner.png" alt="">
+        <img src="/assets/img/macAppStore.png" alt="">
+        <img src="/assets/img/amazon-apps-store-us-black2.png" alt="">
+  </div>
+    </div>
+    <!-- <div class="empty-block" fxShow="true" fxHide.gt-md>
+
+    </div> -->
+</section>
+
+<section class="about">
+    <h2>ABOUT</h2>
+    <div class="about-text container">
+      <p>Introducing BombSquad, an explosive arcade-style party game best enjoyed with several friends and a large couch.</p>
+      <p>Jump, punch, throw, and bomb your way to victory as you compete in a plethora of mini-games including Capture-the-Flag, King-of-the-Hill, Bomber-Hockey, and of course Epic-Slow-Motion-Elimination.</p>
+      <p>Up to 8 local players can get in on the action through BombSquad’s support of keyboards, PC gamepads, Wiimotes, PS3 controllers, and XBox 360 controllers. You can even use iOS and Android devices as wireless gamepads via BombSquad Remote, available for free on the iOS App Store, Google Play, and the Amazon Appstore.</p>
+      <p>Harness your mastery of physics to barrage your opponents from afar with precision-thrown bombs, or simply charge in and toss your enemies off the nearest cliff; all’s fair in love and BombSquad.
+        <br>
+        Bombs away!</p>
+    </div>
+    
+</section>
+<section class="trailer">
+    <h2>WATCH TRAILER</h2>
+    <div class="videos-list container">
+      <div class="row"> 
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Iob-dlqMev8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="row">
+        <iframe width="560" height="315" src="https://youtube.com/embed/RJlY4b8P6yQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="row">
+        <iframe width="560" height="315" src="https://youtube.com/embed/C8VcV6CfaJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </div>
+     
+    </div>
+</section>

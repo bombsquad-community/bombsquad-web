@@ -1,0 +1,69 @@
+.carousel-img{
+    width: 100%;
+    max-height: 91vh;
+}
+.carousel-caption{
+    top: 0;
+    margin-top: 62vh;
+    left:28%;
+    right: 0;
+    h3{
+       font-size: 60px;
+       font-weight: bold;
+       color: yellow;
+    }
+    
+}
+.mob-caption{
+    // position: absolute;
+    padding-top: 30px;
+    left:10;
+    width: 100%;
+    z-index: 3;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    img{
+        width: 180px;
+    }
+}
+
+// .empty-block{
+//     min-height: 8em;
+// }
+.about{
+    background-color: black;
+    color: white;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    h2{
+        text-align: center;
+    }
+    .about-text{
+        // width:300px;
+        margin: auto;
+        line-height: 1.9;
+        font-size: 1.1rem;
+    }
+}
+.trailer{
+     background-color: black;
+    // background: url("/assets/img/clayBackGreen.png");
+    color: white;
+    padding-top: 60px;
+    h2{
+        text-align: center;
+    }
+    .videos-list{
+        // display: flex;
+        // justify-content: center;
+    }
+    .container{
+        max-width: 704px;
+        .row{
+            margin-top: 60px;
+        }
+    }
+}
