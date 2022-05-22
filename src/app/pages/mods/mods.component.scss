@@ -1,0 +1,44 @@
+
+
+.background{
+    background-color: black;
+}
+.heading{
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    padding-top: 20px;
+}
+.mat-card{
+    background-color: #c9c9c9 !important;
+}
+:host ::ng-deep .mat-form-field-underline {
+    background-color: white !important; 
+    border: 1px solid;
+ }
+
+:host ::ng-deep .mat-form-field-label{
+     color: white !important;
+ }
+
+.search-box{
+    color: whitesmoke;
+    margin: auto;
+    padding-top: 2em;
+    width: 80%;
+}
+.mods-list{
+    width: 80%;
+    margin: auto;
+    .mod{
+        padding-bottom: 2em;
+    }
+}
+mat-paginator {
+    background-color: rgba(255, 255, 255, .1);
+    color: white;
+    
+}
+:host ::ng-deep .mat-select-value {
+    color: rgba(235, 230, 230, 0.904) !important;
+}

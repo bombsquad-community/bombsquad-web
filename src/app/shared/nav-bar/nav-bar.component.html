@@ -1,4 +1,4 @@
-<div class="side-nav-bar-main">
+<!-- <div class="side-nav-bar-main">
     <mat-toolbar class="dark-theme">
       <mat-toolbar-row>
         <button mat-icon-button (click)="toggleSidenav()" fxShow="true" fxHide.gt-sm>
@@ -6,9 +6,9 @@
         </button>
         <span class="logo"><img src="/assets/img/mainLogo.png" alt=""></span>
         <span class="menu-spacer"></span>
-        <div fxShow="true" fxHide.lt-md>
+        <div fxShow="true" fxHide.lt-md> -->
           <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-          <a href="#" mat-button>HOME</a>
+          <!-- <a href="#" mat-button>HOME</a>
           <a href="#" mat-button>DOWNLOAD</a>
           <a href="#" mat-button>ABOUT</a>
           <a href="#" mat-button>GITHUB</a>
@@ -20,9 +20,9 @@
   
     <mat-sidenav-container fxFlexFill [ngStyle]="{'height':(isShowing)?'90vh':'0vh'}">
       <mat-sidenav #sidenav mode="side" [(opened)]="isShowing">
-        <mat-nav-list>
-          <!-- <a (click)="toggleSidenav()" href="" mat-list-item>Close</a> -->
-          <a href="#"  mat-list-item>HOME</a>
+        <mat-nav-list> -->
+          <!-- <a (click)="toggleSidenav()" href="" mat-list-item>Close</a>   dont disable this -->   
+          <!-- <a href="#"  mat-list-item>HOME</a>
           <a href="#" mat-button>DOWNLOAD</a>
           <a href="#" mat-button>ABOUT</a>
           <a href="#" mat-button>GITHUB</a>
@@ -34,5 +34,37 @@
          
       </mat-sidenav-content>
     </mat-sidenav-container>
-</div>
+</div> -->
   
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: black;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img
+      src="/assets/img/mainLogo.png"
+      height="50"
+      alt=""
+      loading="lazy"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="noListNav.toggle()"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNavAltMarkup"
+      mdbCollapse
+      #noListNav="mdbCollapse"
+    >
+      <div class="navbar-nav">
+        <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="home">Home</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="downloads">Download</a>
+        <a class="nav-link" routerLinkActive="active">Github</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="mods">Mods</a>
+      </div>
+    </div>
+  </div>
+</nav>

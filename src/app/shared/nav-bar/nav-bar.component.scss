@@ -2,8 +2,11 @@
     flex: 1 1 auto;
   }
 
-  .logo{
+.logo{
     img{
       width: 200px;
     }
-  }
+}
+:host ::ng-deep .nav-link{
+  padding-right: 2.3rem !important;
+}

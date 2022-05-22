@@ -1,0 +1,45 @@
+<section>
+    <div class="background">
+        <div class="heading">
+            <span>Mods Repository</span>
+        </div>
+        <div class="search-box">
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Search Mod</mat-label>
+                <input matInput type="text" [(ngModel)]="value">
+                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+        </div>
+        <div class="mods-list">
+            <div class="mod" routerLink="/mods/346346346">
+                <div class="card">
+                    <div class="card-body"><h5 class="card-title">Card title</h5>
+                        This is some text within a card body.</div>
+                </div>
+            </div>
+            <div class="mod">
+                <div class="card">
+                    <div class="card-body">This is some text within a card body.</div>
+                </div>
+            </div>
+            <div class="mod">
+                <div class="card">
+                    <div class="card-body">This is some text within a card body.</div>
+                </div>
+            </div>
+            <div class="mod">
+                <div class="card">
+                    <div class="card-body">This is some text within a card body.</div>
+                </div>
+            </div>
+            
+        <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page" (page)="pageChanged($event)">
+        </mat-paginator>
+            
+
+        </div>
+    </div>
+    
+</section>
