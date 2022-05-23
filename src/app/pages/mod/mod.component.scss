@@ -12,7 +12,17 @@
     }
 }
 .details{
-    justify-content: center;
-    width: 70%;
     padding-top: 40px;
+}
+
+.return{
+    padding-top:80px;
+    display: flex;
+    justify-content: center;
+    .return-btn{
+        border: 1px solid white;
+        width: 120px;
+       
+        height: 30px;
+    }
 }

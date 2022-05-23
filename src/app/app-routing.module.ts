@@ -5,8 +5,24 @@ import { ModComponent } from './pages/mod/mod.component';
 import { ModsComponent } from './pages/mods/mods.component';
 
 const routes: Routes = [
-  {path:'home',component:HomepageComponent},
-  {path:'mods',component:ModsComponent},
+  {
+    path:'home',
+    component:HomepageComponent,
+    data:{
+      title:'Home',
+      description:"8 players party game madness , downlaod now",
+      ogUrl:'https://bombsquad.ga'
+    }
+  },
+  {
+    path:'mods',
+    component:ModsComponent,
+    data:{
+      title:'Download Mods',
+      description:"Download Community Mods",
+      ogUrl:'https://bombsquad.ga/mods'
+    }
+  },
   {path:'mods/:modId',component:ModComponent},
   {path:'**',redirectTo:'home'}
 ];
@@ -15,4 +31,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
