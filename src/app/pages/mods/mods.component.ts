@@ -48,7 +48,7 @@ export class ModsComponent implements OnInit {
     this.loadData();
 
         var rt = this.getChild(this.activatedRoute)
- 
+
         rt.data.subscribe((data: any) => {
           console.log(data);
           this._seoService.updateTitle(data.title);
@@ -57,7 +57,7 @@ export class ModsComponent implements OnInit {
           this._seoService.updateDescription(data.title + data.description)
         });
   }
-  
+
   getChild(activatedRoute: ActivatedRoute):any {
     if (activatedRoute.firstChild) {
       return this.getChild(activatedRoute.firstChild);
@@ -92,6 +92,11 @@ export class ModsComponent implements OnInit {
   }
   valueChange(event:any){
     this.loadData();
+  }
+
+  resetSearch(){
+    this.value="";
+    this.loadData()
   }
 
 }

@@ -5,13 +5,13 @@
             <div>
                 Posted on : {{mod[0].uploadedOn}} <br>
                 Posted By : {{mod[0].uploaderUsername}} <br>
-                Details : {{mod[0].description}} <br>
+                Details : {{mod[0].description}} <br> <br>
                 Files : <div class="attachment" *ngFor="let file of mod[0].attachments">
-                            <a href={{file}}> {{file.split("/").pop()}}</a> 
+                            <a href={{file}}> {{file.split("/").pop()}}</a>
                         </div>
-            </div>           
+            </div>
         </div>
-        <div class="heading return" > 
+        <div class="heading return" >
             <div class="return-btn" routerLink="/mods">
                 <h3>Return</h3>
             </div>

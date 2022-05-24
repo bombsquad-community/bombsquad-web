@@ -18,19 +18,20 @@ export class ModComponent implements OnInit {
   ngOnInit(): void {
     var modId=this.activatedRoute.snapshot.paramMap.get('modId');
     this.loadData(modId);
-    
+
   }
 
   loadData(modId:any){
     this.modsService.getMods(1,0,modId).subscribe(data=>{
       this.mod=data;
-     
+
         var title="unknown.mod"
         for(var attach of this.mod[0].attachments ){
           if(attach.endsWith(".py")){
             title = attach.split('/').pop()
           }
         }
+        console.log(this.mod[0].description)
         this.mod[0].title=title;
         this.updateMeta(this.mod[0])
     })
@@ -47,7 +48,7 @@ export class ModComponent implements OnInit {
           this._seoService.updateDescription(meta.title + meta.description)
         });
   }
-  
+
   getChild(activatedRoute: ActivatedRoute):any {
     if (activatedRoute.firstChild) {
       return this.getChild(activatedRoute.firstChild);

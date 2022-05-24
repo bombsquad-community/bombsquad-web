@@ -7,12 +7,15 @@
 .mod-info{
     width: 80%;
     margin: auto;
+    white-space: pre-wrap;
     .heading{
         text-align: center;
     }
 }
 .details{
     padding-top: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 .return{
