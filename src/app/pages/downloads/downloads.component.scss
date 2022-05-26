@@ -1,0 +1,36 @@
+
+.background{
+  background-color: black;
+  min-height: 65vh;
+}
+.content{
+  width: 80%;
+  margin: auto;
+}
+.heading{
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  padding-top: 20px;
+}
+
+.bombsquad-app{
+  margin-top: 40px;
+}
+.download-links{
+  .dwn-link{
+    margin-top: 20px;
+    img{
+      height: 40px;
+    }
+  }
+}
+
+.dwn-btn{
+  img{
+    height: 28px;
+  }
+  @media only screen and (min-width: 768px) {
+    img{height: 58px;}
+  }
+}

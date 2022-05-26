@@ -24,6 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ModsComponent } from './pages/mods/mods.component';
 import { ModComponent } from './pages/mod/mod.component';
+import { DownloadsComponent } from './pages/downloads/downloads.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ModComponent } from './pages/mod/mod.component';
     HomepageComponent,
     FooterComponent,
     ModsComponent,
-    ModComponent
+    ModComponent,
+    DownloadsComponent
   ],
   imports: [
     BrowserModule,
