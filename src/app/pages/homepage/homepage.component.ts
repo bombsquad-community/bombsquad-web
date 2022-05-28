@@ -21,16 +21,16 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
 
         var rt = this.getChild(this.activatedRoute)
- 
+
         rt.data.subscribe((data: any) => {
           console.log(data);
           this._seoService.updateTitle(data.title);
           this._seoService.updateOgUrl(data.ogUrl);
           //Updating Description tag dynamically with title
-          this._seoService.updateDescription(data.title + data.description)
+          this._seoService.updateDescription(data.description)
         });
   }
-  
+
   getChild(activatedRoute: ActivatedRoute):any {
     if (activatedRoute.firstChild) {
       return this.getChild(activatedRoute.firstChild);

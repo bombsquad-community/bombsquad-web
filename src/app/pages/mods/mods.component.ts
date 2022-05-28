@@ -54,7 +54,7 @@ export class ModsComponent implements OnInit {
           this._seoService.updateTitle(data.title);
           this._seoService.updateOgUrl(data.ogUrl);
           //Updating Description tag dynamically with title
-          this._seoService.updateDescription(data.title + data.description)
+          this._seoService.updateDescription(data.description)
         });
   }
 

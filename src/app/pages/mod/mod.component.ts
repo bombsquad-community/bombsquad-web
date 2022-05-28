@@ -45,7 +45,7 @@ export class ModComponent implements OnInit {
           this._seoService.updateTitle(meta.title);
           this._seoService.updateOgUrl("https://bombsquad.ga");
           //Updating Description tag dynamically with title
-          this._seoService.updateDescription(meta.title + meta.description)
+          this._seoService.updateDescription(meta.description)
         });
   }
 

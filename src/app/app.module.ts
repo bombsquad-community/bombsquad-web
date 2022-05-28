@@ -37,7 +37,7 @@ import { DownloadsComponent } from './pages/downloads/downloads.component';
     DownloadsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,

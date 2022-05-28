@@ -20,17 +20,27 @@ const routes: Routes = [
     component:ModsComponent,
     data:{
       title:'Download Mods',
-      description:"Download Community Mods",
+      description:"Download Community Mods, Plugins all at one place",
       ogUrl:'https://bombsquad.ga/mods'
     }
   },
   {path:'mods/:modId',component:ModComponent},
-  {path:'download',component:DownloadsComponent},
+  {
+    path:'download',
+    component:DownloadsComponent,
+    data:{
+      title:'Download',
+      description:"Download BombSquad Game , Remote, VR, Server Builds",
+      ogUrl:'https://bombsquad.ga/download'
+    }
+   },
   {path:'**',redirectTo:'home'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabledBlocking'
+})],
   exports: [RouterModule]
 })
 
