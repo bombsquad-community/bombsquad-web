@@ -1,4 +1,5 @@
 # BallisticaWeb
+[![build status](https://github.com/imayushsaini/ballistica-web/workflows/Build/badge.svg)](https://github.com/imayushsaini/ballistica-web/actions)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
