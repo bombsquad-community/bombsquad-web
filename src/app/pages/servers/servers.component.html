@@ -1,0 +1,43 @@
+<section>
+  <div class="background">
+      <div class="heading">
+          <span>Public Servers List</span>
+      </div>
+      <div class="about-page">
+       hmmmmm public server list ...for no reason ! <br>
+       servers checked after every 20 minutes , so if you see server lastseen longer then that maybe server is offline now.
+        Started this service on 24 July 2022 so thats the oldest first seen.Score is calculated based on players playing on that server 24/7 and size of the server.
+
+      </div>
+      <div class="search-box">
+          <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Search Servers</mat-label>
+              <input matInput type="text" [(ngModel)]="value" (ngModelChange)="valueChange($event)">
+              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetSearch()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+      </div>
+      <div class="mods-list">
+          <div class="mod" *ngFor="let server of servers" >
+              <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-weight:550">{{server.name}}</h5>
+                     IP: {{server.ip}} ,  PortT: {{server.port}} ,  Build: {{server.build}}<br>
+                     <span *ngIf="server.stats">STATS: {{server.stats}} <br></span>
+                     QueueId: {{server.queueId}} <br>
+                     {{server.city}} , {{server.region}}, {{server.country}}, {{server.host}} <br>
+                     MaxPlayers: {{server.maxPlayers}} , Language: {{server.language}} <br>
+                     Score: {{server.score.toFixed(2)}} , FirstSeen: {{server.firstSeen}} , LastSeen: {{server.lastSeen}}
+                  </div>
+              </div>
+          </div>
+
+      <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page" (page)="pageChanged($event)">
+      </mat-paginator>
+
+
+      </div>
+  </div>
+
+</section>

@@ -25,6 +25,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ModsComponent } from './pages/mods/mods.component';
 import { ModComponent } from './pages/mod/mod.component';
 import { DownloadsComponent } from './pages/downloads/downloads.component';
+import { ServersComponent } from './pages/servers/servers.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DownloadsComponent } from './pages/downloads/downloads.component';
     FooterComponent,
     ModsComponent,
     ModComponent,
-    DownloadsComponent
+    DownloadsComponent,
+    ServersComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

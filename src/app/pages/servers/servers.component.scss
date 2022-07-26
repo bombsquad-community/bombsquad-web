@@ -1,0 +1,70 @@
+
+
+.background{
+  background-color: black;
+  min-height: 65vh;
+}
+.heading{
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  padding-top: 20px;
+}
+.mat-card{
+  background-color: #c9c9c9 !important;
+}
+:host ::ng-deep .mat-form-field-underline {
+  background-color: white !important;
+  border: 1px solid;
+}
+
+:host ::ng-deep .mat-form-field-label{
+   color: white !important;
+}
+
+.search-box{
+  color: whitesmoke;
+  margin: auto;
+  padding-top: 2em;
+  width: 40%;
+}
+.about-page{
+width: 40%;
+margin: auto;
+color: #a09e9e;
+padding-top: 20px;
+font-size: small;
+a{
+  text-decoration: none;
+}
+
+}
+
+.card-body {
+  padding: 1rem 1.6rem;
+}
+.mods-list{
+  width: 43%;
+
+  margin: auto;
+  .mod{
+      padding-bottom: 2em;
+      cursor: pointer;
+  }
+}
+mat-paginator {
+  background-color: rgba(255, 255, 255, .1);
+  color: white;
+
+}
+:host ::ng-deep .mat-select-value {
+  color: rgba(235, 230, 230, 0.904) !important;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .mods-list,.about-page{
+    width: 80%;
+  }
+
+  }

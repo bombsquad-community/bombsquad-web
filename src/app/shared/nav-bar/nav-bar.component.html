@@ -60,10 +60,11 @@
       #noListNav="mdbCollapse"
     >
       <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="home">Home</a>
-        <a class="nav-link" routerLinkActive="active" routerLink="download">Download</a>
-        <a class="nav-link" routerLinkActive="active" href="https://github.com/efroemling/ballistica">Github</a>
-        <a class="nav-link" routerLinkActive="active" routerLink="mods">Mods</a>
+        <a class="nav-link" aria-current="page" (click)="noListNav.toggle()" routerLinkActive="active" routerLink="home">Home</a>
+        <a class="nav-link" routerLinkActive="active" (click)="noListNav.toggle()" routerLink="download">Download</a>
+        <a class="nav-link" routerLinkActive="active" (click)="noListNav.toggle()" href="https://github.com/efroemling/ballistica">Github</a>
+        <a class="nav-link" routerLinkActive="active" (click)="noListNav.toggle()" routerLink="mods">Mods</a>
+        <a class="nav-link" routerLinkActive="active" (click)="noListNav.toggle()"  routerLink="servers">Servers</a>
         <a class="nav-link" routerLinkActive="active" href="https://discord.gg/ucyaesh">Discord</a>
       </div>
     </div>
