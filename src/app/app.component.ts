@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Event, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { TokenStorageService } from './services/token-storage.service';
 
 declare const gtag:Function;
 
@@ -11,7 +12,10 @@ declare const gtag:Function;
 })
 export class AppComponent {
   title = 'ballistica-web';
-  constructor(private router: Router, private activatedRoute:ActivatedRoute) {
+  isLoggedIn = false;
+  subscription:any;
+  tag?:string;
+  constructor(private router: Router, private activatedRoute:ActivatedRoute, private tokenStorage:TokenStorageService) {
     this.router.events.pipe(
       filter((event:Event) => event instanceof NavigationEnd)
     ).subscribe((event) => {
@@ -21,5 +25,21 @@ export class AppComponent {
       })
       /** END */
     })
+  }
+  ngOnInit():void {
+    this.isLoggedIn = !!this.tokenStorage.getToken();
+    if(this.isLoggedIn) {
+      const user = this.tokenStorage.getUser();
+      this.tag = user.tag;
+    }
+
+    this.subscription = this.tokenStorage.loginEvent.subscribe(()=>{
+      const user = this.tokenStorage.getUser();
+      this.isLoggedIn = !!this.tokenStorage.getToken();
+    });
+   this.tokenStorage.newUserLogin.subscribe(()=>{
+      const user = this.tokenStorage.getUser();
+      this.isLoggedIn = !!this.tokenStorage.getToken();
+    });
   }
 }

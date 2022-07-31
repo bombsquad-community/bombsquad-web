@@ -50,7 +50,7 @@ export class ModsComponent implements OnInit {
         var rt = this.getChild(this.activatedRoute)
 
         rt.data.subscribe((data: any) => {
-          console.log(data);
+
           this._seoService.updateTitle(data.title);
           this._seoService.updateOgUrl(data.ogUrl);
           //Updating Description tag dynamically with title
@@ -82,7 +82,7 @@ export class ModsComponent implements OnInit {
   }
 
   pageChanged(event: PageEvent) {
-    console.log({ event });
+
     this.pageSize = event.pageSize;
     this.currentPage = event.pageIndex;
     this.loadData();

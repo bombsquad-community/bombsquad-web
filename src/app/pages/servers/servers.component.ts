@@ -51,7 +51,7 @@ export class ServersComponent implements OnInit {
         var rt = this.getChild(this.activatedRoute)
 
         rt.data.subscribe((data: any) => {
-          console.log(data);
+
           this._seoService.updateTitle(data.title);
           this._seoService.updateOgUrl(data.ogUrl);
           //Updating Description tag dynamically with title
@@ -69,13 +69,13 @@ export class ServersComponent implements OnInit {
 
   loadData(){
     this.serversService.getServers(this.pageSize,this.currentPage,this.value).subscribe(data=>{
-      console.log(data);
+
       this.servers=data;
     })
   }
 
   pageChanged(event: PageEvent) {
-    console.log({ event });
+
     this.pageSize = event.pageSize;
     this.currentPage = event.pageIndex;
     this.loadData();

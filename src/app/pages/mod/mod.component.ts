@@ -31,7 +31,7 @@ export class ModComponent implements OnInit {
             title = attach.split('/').pop()
           }
         }
-        console.log(this.mod[0].description)
+
         this.mod[0].title=title;
         this.updateMeta(this.mod[0])
     })
@@ -41,7 +41,7 @@ export class ModComponent implements OnInit {
         var rt = this.getChild(this.activatedRoute)
 
         rt.data.subscribe((data: any) => {
-          console.log(data);
+
           this._seoService.updateTitle(meta.title);
           this._seoService.updateOgUrl("https://bombsquad.ga");
           //Updating Description tag dynamically with title

@@ -67,6 +67,11 @@
         <a class="nav-link" routerLinkActive="active" (click)="noListNav.toggle()"  routerLink="servers">Servers</a>
         <a class="nav-link" routerLinkActive="active" href="https://discord.gg/ucyaesh">Discord</a>
       </div>
+      <div class=" navbar-nav d-flex align-items-center">
+        <a *ngIf="!isLoggedIn" class="nav-link" aria-current="page" (click)="noListNav.toggle()" routerLinkActive="active" routerLink="login">Login</a>
+        <div *ngIf="isLoggedIn"><img src="/assets/img/icon_account_v2.svg" width="20px" alt=""> <span class="tag"> {{tag}}</span></div>
+        <a *ngIf="isLoggedIn" class="nav-link" aria-current="page" (click)="signout()"  routerLink="mods" >Signout</a>
+      </div>
     </div>
   </div>
 </nav>

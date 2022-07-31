@@ -26,6 +26,8 @@ import { ModsComponent } from './pages/mods/mods.component';
 import { ModComponent } from './pages/mod/mod.component';
 import { DownloadsComponent } from './pages/downloads/downloads.component';
 import { ServersComponent } from './pages/servers/servers.component';
+import { authInterceptorProvider } from './_helpers/auth.interceptor';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { ServersComponent } from './pages/servers/servers.component';
     ModsComponent,
     ModComponent,
     DownloadsComponent,
-    ServersComponent
+    ServersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -57,7 +60,7 @@ import { ServersComponent } from './pages/servers/servers.component';
     MatPaginatorModule,
     NgbModule
   ],
-  providers: [],
+  providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {
