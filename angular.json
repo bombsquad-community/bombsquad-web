@@ -29,13 +29,15 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/sitemap.txt"
-
+              "src/sitemap.txt",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -98,7 +100,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss"
@@ -168,5 +171,8 @@
       }
     }
   },
-  "defaultProject": "ballistica-web"
+  "defaultProject": "ballistica-web",
+  "cli": {
+    "analytics": "c32326e4-3e9d-442b-a8e1-299759f06a77"
+  }
 }

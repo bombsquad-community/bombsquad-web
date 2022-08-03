@@ -28,6 +28,8 @@ import { DownloadsComponent } from './pages/downloads/downloads.component';
 import { ServersComponent } from './pages/servers/servers.component';
 import { authInterceptorProvider } from './_helpers/auth.interceptor';
 import { LoginComponent } from './pages/login/login.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,13 @@ import { LoginComponent } from './pages/login/login.component';
     MatInputModule,
     MdbCollapseModule,
     MatPaginatorModule,
-    NgbModule
+    NgbModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
