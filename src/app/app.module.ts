@@ -12,7 +12,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
-import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+
 import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +20,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ModsComponent } from './pages/mods/mods.component';
 import { ModComponent } from './pages/mod/mod.component';
@@ -30,6 +29,7 @@ import { authInterceptorProvider } from './_helpers/auth.interceptor';
 import { LoginComponent } from './pages/login/login.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -58,15 +58,14 @@ import { environment } from '../environments/environment';
     MatCardModule,
     MatListModule,
     MatInputModule,
-    MdbCollapseModule,
     MatPaginatorModule,
-    NgbModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    NgbModule
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]

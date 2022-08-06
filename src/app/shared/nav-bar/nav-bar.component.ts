@@ -10,21 +10,17 @@ export class NavBarComponent implements OnInit {
   @Input() isLoggedIn: any;
   @Input() tag: any;
   title="BombSquad";
-  isShowing: boolean = false;
 
+  public isMenuCollapsed = true;
   constructor(private tokenStorage:TokenStorageService) { }
 
   ngOnInit(): void {
     const user = this.tokenStorage.getUser();
     this.tag = user.tag;
+    console.log(this.tag+"is logged in bruh")
   }
 
-
-  toggleSidenav() {
-   this.isShowing = !this.isShowing;
-   }
-
-   signout(){
+  signout(){
     this.tokenStorage.signOut();
     location.reload();
    }

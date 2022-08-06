@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
-import { filter, map, mergeMap } from 'rxjs';
 import { SEOServiceService } from 'src/app/services/seoservice.service';
 
 @Component({
@@ -29,7 +28,7 @@ export class HomepageComponent implements OnInit {
           //Updating Description tag dynamically with title
           this._seoService.updateDescription(data.description)
         });
-  }
+   }
 
   getChild(activatedRoute: ActivatedRoute):any {
     if (activatedRoute.firstChild) {
