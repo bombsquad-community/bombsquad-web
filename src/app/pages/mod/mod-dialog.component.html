@@ -1,0 +1,28 @@
+<h2 mat-dialog-title> {{file.split("/").pop()}}</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="loggedin" *ngIf="loggedIn && validFile">
+    Download file and install it manually <br> OR <br>
+    Directly install it to your workspace <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Select workspace</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="{{workspaceName}}" *ngFor="let workspaceName of workspaces">{{workspaceName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="notloggedin" *ngIf="!loggedIn && validFile">
+    Download file and install it manually <br> OR <br>
+    Login to your account to install mod directly to your workspace. <br>
+    <button mat-raised-button routerLink="login" mat-dialog-close>Login</button> <br>.
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button *ngIf="validFile" (click)="install()" mat-dialog-close>Install</button>
+  <button mat-button cdkFocusInitial (click)="download()" mat-dialog-close >Download</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+
+<!-- Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->

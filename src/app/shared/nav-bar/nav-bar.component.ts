@@ -17,7 +17,6 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     const user = this.tokenStorage.getUser();
     this.tag = user.tag;
-    console.log(this.tag+"is logged in bruh")
   }
 
   signout(){

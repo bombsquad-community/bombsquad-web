@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   error:any;
   tag?:string;
   isLoggedIn= false;
+  child: Window | null | undefined;
   constructor(private authService:AuthService, private tokenStorage:TokenStorageService, private router:Router) { }
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
       this.key = data.end_command[1].k;
       this.url = data.open_url;
       setTimeout(()=> {
-        window.open(this.url,"_blank");
+        this.child = window.open(this.url,"_blank");
       }, 2000)
 
       this.checkProgress();
@@ -53,7 +54,7 @@ export class LoginComponent implements OnInit {
           const user = JSON.parse(atob(data.body.token.split(".")[1]))
           this.tokenStorage.saveUser(user);
           this.tokenStorage.saveToken(data.body.token);
-
+          this.child?.close();
           this.afterLoggedIn();
         }
     },(error)=>{
