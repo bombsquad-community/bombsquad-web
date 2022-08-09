@@ -10,7 +10,6 @@ const httpOption={
   providedIn: 'root'
 })
 export class ModsService {
-
   constructor(private http:HttpClient) { }
 
   getMods(size:any,page:any,key:string){

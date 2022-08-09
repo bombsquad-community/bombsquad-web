@@ -16,7 +16,7 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   getProxy(){
-    return this.http.get("https://api2.bombsquad.ga/getproxy");
+    return this.http.post("https://api2.bombsquad.ga/getproxy",{});
   }
 
   checkLoginProgress(date: any,proxy: any,key: any) {

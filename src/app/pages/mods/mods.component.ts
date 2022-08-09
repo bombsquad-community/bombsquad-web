@@ -67,7 +67,7 @@ export class ModsComponent implements OnInit {
   }
 
   loadData(){
-    this.modsService.getMods(this.pageSize,this.currentPage,this.value).subscribe(data=>{
+    this.modsService.getMods(this.pageSize,this.currentPage,this.value).subscribe((data:any)=>{
       this.mods=data;
       for(var mod of this.mods){
         var title=""

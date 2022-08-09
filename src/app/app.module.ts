@@ -34,6 +34,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { cacheInterceptorProvider } from './_helpers/cache.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +76,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSelectModule,
     MatSnackBarModule
   ],
-  providers: [authInterceptorProvider],
+  providers: [authInterceptorProvider,cacheInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {

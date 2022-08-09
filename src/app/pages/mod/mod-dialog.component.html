@@ -5,10 +5,13 @@
     Directly install it to your workspace <br>
     <mat-form-field appearance="fill">
       <mat-label>Select workspace</mat-label>
-      <mat-select [(value)]="selected">
+      <mat-select [(value)]="selected" >
         <mat-option value="{{workspaceName}}" *ngFor="let workspaceName of workspaces">{{workspaceName}}</mat-option>
       </mat-select>
     </mat-form-field>
+    <div>
+      <span style ="color:red" *ngIf="!haveWorkspace"> No workspace found in your account , visit ballistica.net and create one.</span>
+    </div>
   </div>
   <div class="notloggedin" *ngIf="!loggedIn && validFile">
     Download file and install it manually <br> OR <br>
@@ -18,7 +21,7 @@
 
 </mat-dialog-content>
 <mat-dialog-actions align="center">
-  <button mat-button *ngIf="validFile" (click)="install()" mat-dialog-close>Install</button>
+  <button mat-button *ngIf="validFile && haveWorkspace" (click)="install()" mat-dialog-close>Install</button>
   <button mat-button cdkFocusInitial (click)="download()" mat-dialog-close >Download</button>
   <button mat-button mat-dialog-close>Cancel</button>
 </mat-dialog-actions>

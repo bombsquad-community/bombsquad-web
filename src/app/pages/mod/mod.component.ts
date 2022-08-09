@@ -26,7 +26,7 @@ export class ModComponent implements OnInit {
   }
 
   loadData(modId:any){
-    this.modsService.getMods(1,0,modId).subscribe(data=>{
+    this.modsService.getMods(1,0,modId).subscribe((data:any)=>{
       this.mod=data;
 
         var title="unknown.mod"
@@ -83,12 +83,16 @@ export class ModDialog{
   workspaces:any;
   loggedIn:boolean;
   validFile=false;
+  haveWorkspace:boolean = false;
   constructor(@Inject(MAT_DIALOG_DATA) data : {file : String, loggedIn:boolean}, private workspace:WorkspaceService, private snackBar: MatSnackBar) {
 
     this.file = data.file;
     this.loggedIn = data.loggedIn;
     this.workspaces = workspace.getWorkspaceList();
     this.selected = this.workspaces[0];
+    if(this.selected!="(no workspaces)"){
+      this.haveWorkspace=true;
+    }
     if(this.file.endsWith(".py"))
      this.validFile=true;
 
