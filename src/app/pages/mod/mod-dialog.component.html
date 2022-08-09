@@ -21,7 +21,7 @@
 
 </mat-dialog-content>
 <mat-dialog-actions align="center">
-  <button mat-button *ngIf="validFile && haveWorkspace" (click)="install()" mat-dialog-close>Install</button>
+  <button mat-button *ngIf="validFile && haveWorkspace && loggedIn" (click)="install()" mat-dialog-close>Install</button>
   <button mat-button cdkFocusInitial (click)="download()" mat-dialog-close >Download</button>
   <button mat-button mat-dialog-close>Cancel</button>
 </mat-dialog-actions>
