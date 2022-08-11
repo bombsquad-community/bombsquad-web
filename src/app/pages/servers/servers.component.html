@@ -19,6 +19,9 @@
             </mat-form-field>
       </div>
       <div class="mods-list">
+        <div class="loading" *ngIf="isLoading">
+          <mat-spinner></mat-spinner>
+         </div>
           <div class="mod" *ngFor="let server of servers" >
               <div class="card">
                   <div class="card-body">

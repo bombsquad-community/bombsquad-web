@@ -42,7 +42,7 @@ export class ServersComponent implements OnInit {
   currentPage = 0;
   pageSizeOptions: number[] = [ 10, 50, 100];
   servers:any;
-
+  isLoading:boolean = true;
   constructor(private serversService:ServersService,private router:Router,private _seoService:SEOServiceService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -69,7 +69,7 @@ export class ServersComponent implements OnInit {
 
   loadData(){
     this.serversService.getServers(this.pageSize,this.currentPage,this.value).subscribe(data=>{
-
+      this.isLoading = false;
       this.servers=data;
     })
   }

@@ -55,3 +55,10 @@ mat-paginator {
 :host ::ng-deep .mat-select-value {
     color: rgba(235, 230, 230, 0.904) !important;
 }
+
+.loading {
+  min-height: 51vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

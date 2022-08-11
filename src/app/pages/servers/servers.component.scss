@@ -52,6 +52,12 @@ a{
       cursor: pointer;
   }
 }
+.loading {
+  min-height: 51vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 mat-paginator {
   background-color: rgba(255, 255, 255, .1);
   color: white;

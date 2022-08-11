@@ -35,6 +35,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { cacheInterceptorProvider } from './_helpers/cache.interceptor';
+import { LazyloadimageDirective } from './_helpers/lazyloadimage.directive';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,8 @@ import { cacheInterceptorProvider } from './_helpers/cache.interceptor';
     DownloadsComponent,
     ServersComponent,
     LoginComponent,
-    ModDialog
+    ModDialog,
+    LazyloadimageDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -74,7 +77,8 @@ import { cacheInterceptorProvider } from './_helpers/cache.interceptor';
     MatChipsModule,
     MatDialogModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [authInterceptorProvider,cacheInterceptorProvider],
   bootstrap: [AppComponent]

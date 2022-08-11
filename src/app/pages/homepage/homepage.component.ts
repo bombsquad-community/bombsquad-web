@@ -11,7 +11,8 @@ import { SEOServiceService } from 'src/app/services/seoservice.service';
 export class HomepageComponent implements OnInit {
   showNavigationArrows = false;
   showNavigationIndicators = false;
-  images = ["/assets/img/bs-bg-1.jpg","/assets/img/bs-bg-2.jpg"];
+  images = ["/assets/img/bs-bg-1.webp","/assets/img/bs-bg-2.webp"];
+  imageLoded:number=0;
   constructor(config: NgbCarouselConfig,private router:Router ,private activatedRoute:ActivatedRoute,private _seoService: SEOServiceService) {
     // customize default values of carousels used by this component tree
     config.showNavigationArrows = true;
@@ -36,5 +37,9 @@ export class HomepageComponent implements OnInit {
     } else {
       return activatedRoute;
     }
+  }
+  onload() {
+    console.log("image loded")
+    this.imageLoded++;
   }
 }

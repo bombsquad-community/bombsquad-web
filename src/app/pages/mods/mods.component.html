@@ -17,6 +17,9 @@
               </mat-form-field>
         </div>
         <div class="mods-list">
+           <div class="loading" *ngIf="isLoading">
+            <mat-spinner></mat-spinner>
+           </div>
             <div class="mod" *ngFor="let mod of mods" (click)="openModPage(mod)">
                 <div class="card">
                     <div class="card-body"><h5 class="card-title">{{mod.title}}</h5>

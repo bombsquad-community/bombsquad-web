@@ -42,6 +42,7 @@ export class ModsComponent implements OnInit {
   currentPage = 0;
   pageSizeOptions: number[] = [ 10, 50, 100];
   mods:any;
+  isLoading:boolean = true;
   constructor(private modsService:ModsService,private router:Router,private _seoService:SEOServiceService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -69,6 +70,7 @@ export class ModsComponent implements OnInit {
   loadData(){
     this.modsService.getMods(this.pageSize,this.currentPage,this.value).subscribe((data:any)=>{
       this.mods=data;
+      this.isLoading = false;
       for(var mod of this.mods){
         var title=""
         for(var attach of mod.attachments ){
