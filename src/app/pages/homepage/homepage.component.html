@@ -3,7 +3,7 @@
         <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators" >
             <ng-template ngbSlide *ngFor="let image of images">
               <div class="picsum-img-wrapper">
-                <img [src]="image" alt="BombSquad Game" class="carousel-img" (load)="onload()">
+                <img [src]="image" alt="BombSquad Game" class="carousel-img" >
               </div>
               <div class="carousel-caption" fxShow="true" fxHide.lt-lg>
                 <h3 style="text-shadow: 2px 2px 7px #000000,2px 2px 18px #000000">8 PLAYERS PARTY GAME MADNESS</h3>
@@ -15,10 +15,6 @@
               </div>
             </ng-template>
         </ngb-carousel>
-        <div class="placeholder" style="min-height: 520px;" *ngIf="imageLoded!=2" fxShow="true" fxHide.lt-lg>
-        </div>
-        <div class="placeholder" style="min-height: 90px;" *ngIf="imageLoded!=2" fxShow="true" fxHide.gt-md>
-        </div>
     </div>
     <div class="mob-caption" fxShow="true" fxHide.gt-md>
       8 PLAYERS <br><br>PARTY MADNESS
