@@ -19,13 +19,16 @@ export class ModComponent implements OnInit {
 
   mod:any;
   isLoggedIn = false;
+  videos:string[]=[];
+  scripts:string[]=[];
+  images:string[]=[];
   ngOnInit(): void {
     var modId=this.activatedRoute.snapshot.paramMap.get('modId');
     this.loadData(modId);
     if(this.tokenStorage.getToken()) this.isLoggedIn = true;
   }
 
-  loadData(modId:any){
+  loadData(modId:any) {
     this.modsService.getMods(1,0,modId).subscribe((data:any)=>{
       this.mod=data;
 
@@ -33,6 +36,13 @@ export class ModComponent implements OnInit {
         for(var attach of this.mod[0].attachments ){
           if(attach.endsWith(".py") || attach.endsWith(".zip") || attach.endsWith(".rar")){
             title = attach.split('/').pop()
+            this.scripts.push(attach);
+          }
+          else if(attach.endsWith(".mp4")){
+            this.videos.push(attach);
+          }
+          else if(attach.endsWith(".jpg")||attach.endsWith(".png")||attach.endsWith(".jpeg")||attach.endsWith(".gif")) {
+            this.images.push(attach);
           }
         }
 

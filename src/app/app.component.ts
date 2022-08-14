@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Event, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { TokenStorageService } from './services/token-storage.service';
@@ -16,14 +17,16 @@ export class AppComponent {
   isLoggedIn = false;
   subscription:any;
   tag?:string;
-  constructor(private router: Router, private activatedRoute:ActivatedRoute, private tokenStorage:TokenStorageService, private workspace:WorkspaceService) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,private router: Router, private activatedRoute:ActivatedRoute, private tokenStorage:TokenStorageService, private workspace:WorkspaceService) {
     this.router.events.pipe(
       filter((event:Event) => event instanceof NavigationEnd)
     ).subscribe((event) => {
       /** START : Code to Track Page View  */
-      gtag('event', 'page_view', {
-          page_path: this.router.url
-      })
+      if (isPlatformBrowser(this.platformId)) {
+        gtag('event', 'page_view', {
+            page_path: this.router.url
+        })
+      }
       /** END */
     })
   }

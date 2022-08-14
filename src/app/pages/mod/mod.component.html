@@ -9,11 +9,25 @@
                 Posted on : {{mod[0].uploadedOn}} <br>
                 Posted By : {{mod[0].uploaderUsername}} <br>
                 Details : {{mod[0].description}} <br> <br>
-                Files : <mat-chip-list aria-label="Fish selection" *ngFor="let file of mod[0].attachments">
+                Scripts : <mat-chip-list aria-label="Fish selection" *ngFor="let file of scripts">
                             <!-- <a href={{file}}> {{file.split("/").pop()}}</a> -->
                             <mat-chip (click)="openVerticallyCentered(file)">{{file.split("/").pop()}}</mat-chip>
                           </mat-chip-list>
             </div>
+
+        </div>
+        <br>
+        <div class="row justify-content-center">
+          <div class="videos" *ngFor="let video of videos" >
+            <video  controls >
+              <source src="{{video}}" type="video/mp4">
+          </video>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="images" *ngFor="let image of images" >
+            <img src="{{image}}" alt="" >
+          </div>
         </div>
         <div class="heading return" >
             <div class="return-btn" routerLink="/mods">
