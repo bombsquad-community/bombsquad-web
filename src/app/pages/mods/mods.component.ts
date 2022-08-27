@@ -13,6 +13,7 @@ import { SEOServiceService } from 'src/app/services/seoservice.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
+import { WorkspaceService } from 'src/app/services/workspace.service';
 @Injectable()
 export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   changes = new Subject<void>();
@@ -50,7 +51,7 @@ export class ModsComponent implements OnInit {
   pageSizeOptions: number[] = [ 10, 50, 100];
   mods:any;
   isLoading:boolean = true;
-  constructor(private modsService:ModsService,private router:Router,private _seoService:SEOServiceService,private activatedRoute:ActivatedRoute) { }
+  constructor(private modsService:ModsService,private router:Router,private _seoService:SEOServiceService,private activatedRoute:ActivatedRoute, private workspace: WorkspaceService) { }
 
   ngOnInit(): void {
     this.loadData();

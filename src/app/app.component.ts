@@ -17,7 +17,7 @@ export class AppComponent {
   isLoggedIn = false;
   subscription:any;
   tag?:string;
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,private router: Router, private activatedRoute:ActivatedRoute, private tokenStorage:TokenStorageService, private workspace:WorkspaceService) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,private router: Router, private activatedRoute:ActivatedRoute, private tokenStorage:TokenStorageService) {
     this.router.events.pipe(
       filter((event:Event) => event instanceof NavigationEnd)
     ).subscribe((event) => {

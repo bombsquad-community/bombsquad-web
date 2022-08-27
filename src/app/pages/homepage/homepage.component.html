@@ -1,4 +1,4 @@
-<section>
+<section style="background-color: black;">
     <div class="carousel" style="background-color: black; min-height: 100px;">
         <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators" >
             <ng-template ngbSlide *ngFor="let image of images">
@@ -41,17 +41,17 @@
     </div>
 
 </section>
-<section class="trailer">
+<section class="trailer" [ngClass]="{hidden: !isScrolled}">
     <h2>WATCH TRAILER</h2>
     <div class="videos-list container">
       <div class="row">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Iob-dlqMev8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe  loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Iob-dlqMev8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="row">
-        <iframe width="560" height="315" src="https://youtube.com/embed/RJlY4b8P6yQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe loading="lazy" width="560" height="315" src="https://youtube.com/embed/RJlY4b8P6yQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="row">
-        <iframe width="560" height="315" src="https://youtube.com/embed/C8VcV6CfaJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe loading="lazy" width="560" height="315" src="https://youtube.com/embed/C8VcV6CfaJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        </div>
 
     </div>
