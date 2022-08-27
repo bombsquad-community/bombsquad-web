@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule, Routes } from '@angular/router';
 import { SEOServiceService } from 'src/app/services/seoservice.service';
-
+import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-downloads',
   templateUrl: './downloads.component.html',
@@ -30,4 +31,19 @@ export class DownloadsComponent implements OnInit {
     }
   }
 
+}
+
+const routes: Routes = [{path: '', component: DownloadsComponent}];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(routes),
+    MatCardModule,
+    MatButtonModule
+    ],
+  exports: [DownloadsComponent],
+  declarations: [DownloadsComponent],
+  providers: []
+})
+export class DownloadModule {
 }

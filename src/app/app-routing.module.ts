@@ -1,16 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DownloadsComponent } from './pages/downloads/downloads.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { LoginComponent } from './pages/login/login.component';
-import { ModComponent } from './pages/mod/mod.component';
-import { ModsComponent } from './pages/mods/mods.component';
-import { ServersComponent } from './pages/servers/servers.component';
 
 const routes: Routes = [
   {
     path:'home',
-    component:HomepageComponent,
+    loadChildren:() => import ('./pages/homepage/homepage.component').then(m => m.HomepageModule),
     data:{
       title:'Home',
       description:"8 players party game madness , downlaod now",
@@ -19,17 +13,21 @@ const routes: Routes = [
   },
   {
     path:'mods',
-    component:ModsComponent,
+    loadChildren:() => import ('./pages/mods/mods.component').then(m => m.ModsModule),
+
     data:{
       title:'Download Mods',
       description:"Download Community Mods, Plugins all at one place",
       ogUrl:'https://bombsquad.ga/mods'
     }
   },
-  {path:'mods/:modId',component:ModComponent},
+  {path:'mods/:modId',
+  loadChildren:() => import ('./pages/mod/mod.component').then(m => m.ModPageModule),
+
+  },
   {
     path:'download',
-    component:DownloadsComponent,
+    loadChildren:() => import ('./pages/downloads/downloads.component').then(m => m.DownloadModule),
     data:{
       title:'Download',
       description:"Download BombSquad Game , Remote, VR, Server Builds",
@@ -38,7 +36,7 @@ const routes: Routes = [
    },
    {
     path:'servers',
-    component:ServersComponent,
+    loadChildren:() => import ('./pages/servers/servers.component').then(m => m.ServersModule),
     data:{
       title:'Public Servers',
       description:"BombSquad Public Servers List",
@@ -47,7 +45,7 @@ const routes: Routes = [
   },
   {
     path:'login',
-    component:LoginComponent,
+    loadChildren:() => import ('./pages/login/login.component').then(m => m.LoginModule),
     data:{
       title:'Login BombSquad Account',
       description:"BombSquad Account login page",

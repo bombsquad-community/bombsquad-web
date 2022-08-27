@@ -1,10 +1,17 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, NgModule, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
-import { ActivatedRoute, Router } from '@angular/router';
-import { filter, map, mergeMap, Subject } from 'rxjs';
+import { ActivatedRoute, Router, RouterModule, Routes } from '@angular/router';
+import { Subject } from 'rxjs';
 import { SEOServiceService } from 'src/app/services/seoservice.service';
 import { ServersService } from 'src/app/services/servers.service';
 
+import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { CommonModule } from '@angular/common';
 @Injectable()
 export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   changes = new Subject<void>();
@@ -90,4 +97,24 @@ export class ServersComponent implements OnInit {
     this.loadData()
   }
 
+}
+
+const routes: Routes = [{path: '', component: ServersComponent}];
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatIconModule,
+    FormsModule
+    ],
+  exports: [ServersComponent],
+  declarations: [ServersComponent],
+  providers: []
+})
+export class ServersModule {
 }

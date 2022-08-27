@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Component, Inject, NgModule, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule, Routes } from '@angular/router';
 
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ModsService } from 'src/app/services/mods.service';
@@ -7,7 +7,13 @@ import { SEOServiceService } from 'src/app/services/seoservice.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { WorkspaceService } from 'src/app/services/workspace.service';
 
-import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
+import {MatSnackBar, MatSnackBarConfig, MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select'
+import {MatChipsModule} from '@angular/material/chips';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-mod',
   templateUrl: './mod.component.html',
@@ -135,3 +141,22 @@ export class ModDialog{
 }
 
 
+const routes: Routes = [{path: '', component: ModComponent}];
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MatDialogModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    MatChipsModule
+    ],
+  exports: [ModComponent, ModDialog],
+  declarations: [ModComponent, ModDialog],
+  providers: []
+})
+export class ModPageModule {
+}

@@ -1,11 +1,18 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, NgModule, OnInit } from '@angular/core';
 import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule, Routes } from '@angular/router';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 import { Subject } from 'rxjs';
 import { ModsService } from 'src/app/services/mods.service';
-
-import { filter, map, mergeMap } from 'rxjs';
 import { SEOServiceService } from 'src/app/services/seoservice.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
 @Injectable()
 export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   changes = new Subject<void>();
@@ -101,4 +108,24 @@ export class ModsComponent implements OnInit {
     this.loadData()
   }
 
+}
+
+const routes: Routes = [{path: '', component: ModsComponent}];
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    FormsModule
+    ],
+  exports: [ModsComponent],
+  declarations: [ModsComponent],
+  providers: []
+})
+export class ModsModule {
 }

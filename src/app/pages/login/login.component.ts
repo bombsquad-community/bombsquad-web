@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
@@ -73,4 +74,18 @@ export class LoginComponent implements OnInit {
   retry(){
     location.reload();
   }
+}
+
+const routes: Routes = [{path: '', component: LoginComponent}];
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    ],
+  exports: [LoginComponent],
+  declarations: [LoginComponent],
+  providers: []
+})
+export class LoginModule {
 }

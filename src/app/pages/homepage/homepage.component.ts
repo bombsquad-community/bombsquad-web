@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule, Routes } from '@angular/router';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import { SEOServiceService } from 'src/app/services/seoservice.service';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -42,4 +45,20 @@ export class HomepageComponent implements OnInit {
     console.log("image loded")
     this.imageLoded++;
   }
+}
+
+const routes: Routes = [{path: '', component: HomepageComponent}];
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    NgbModule,
+    FlexLayoutModule,
+    ],
+  exports: [HomepageComponent],
+  declarations: [HomepageComponent],
+  providers: []
+})
+export class HomepageModule {
 }
