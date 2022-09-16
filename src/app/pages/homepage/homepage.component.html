@@ -1,38 +1,25 @@
-<section style="background-color: black;">
-    <div class="carousel" style="background-color: black; min-height: 100px;">
-        <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators" >
-            <ng-template ngbSlide *ngFor="let image of images">
-              <div class="picsum-img-wrapper">
-                <img [src]="image" alt="BombSquad Game" class="carousel-img" >
-              </div>
-              <div class="carousel-caption" fxShow="true" fxHide.lt-lg>
-                <h3 style="text-shadow: 2px 2px 7px #000000,2px 2px 18px #000000">8 PLAYERS PARTY GAME MADNESS</h3>
-                <div class="downloads">
-                  <a href="https://play.google.com/store/apps/details?id=net.froemling.bombsquad"><img src="/assets/img/gpBanner.png" alt=""></a>
-                  <a href="http://appstore.com/mac/bombsquad"><img src="/assets/img/macAppStore.png" alt=""></a>
-                  <a href="http://www.amazon.com/gp/product/B00E7NAVZA/ref=mas_pm_bombsquad"><img src="/assets/img/amazon-apps-store-us-black2.png" alt=""></a>
-                </div>
-              </div>
-            </ng-template>
-        </ngb-carousel>
+<section style="background-color: black;padding-bottom:20px">
+    <div class="header">
+      <img src="/assets/img/bombsquad-header-1.jpg" alt="" width="100%">
+      <h1>BombSquad Community</h1>
+      <div class="about-text container">
+         <h3>Biggest community of active bombsquaders</h3>
+         <p>
+         We create mods/plugins , we share our work , we help others , we kill spaz without gloves. <br>
+        Find/ask anything you need for bombsquad/ballistica. Are you a bombsquader ? join and contribute , waiting for you with 3000 others.
+        <a href="https://discord.gg/ucyaesh">Bombsquad Community Discord Server</a></p>
+      </div>
     </div>
-    <div class="mob-caption" fxShow="true" fxHide.gt-md>
-      8 PLAYERS <br><br>PARTY MADNESS
-      <div class="downloads">
-        <a href="https://play.google.com/store/apps/details?id=net.froemling.bombsquad"><img src="/assets/img/gpBanner.png" alt=""></a>
-        <a href="http://appstore.com/mac/bombsquad"><img src="/assets/img/macAppStore.png" alt=""></a>
-        <a href="http://www.amazon.com/gp/product/B00E7NAVZA/ref=mas_pm_bombsquad"><img src="/assets/img/amazon-apps-store-us-black2.png" alt=""></a>
-  </div>
-    </div>
+
     <!-- <div class="empty-block" fxShow="true" fxHide.gt-md>
 
     </div> -->
 </section>
 
 <section class="about">
-    <h2>ABOUT</h2>
+    <h2>ABOUT BOMBSQUAD</h2>
     <div class="about-text container">
-      <p>Introducing BombSquad, an explosive arcade-style party game best enjoyed with several friends and a large couch.</p>
+      <p>BombSquad, an explosive arcade-style party game best enjoyed with several friends and a large couch.</p>
       <p>Jump, punch, throw, and bomb your way to victory as you compete in a plethora of mini-games including Capture-the-Flag, King-of-the-Hill, Bomber-Hockey, and of course Epic-Slow-Motion-Elimination.</p>
       <p>Up to 8 local players can get in on the action through BombSquad’s support of keyboards, PC gamepads, Wiimotes, PS3 controllers, and XBox 360 controllers. You can even use iOS and Android devices as wireless gamepads via BombSquad Remote, available for free on the iOS App Store, Google Play, and the Amazon Appstore.</p>
       <p>Harness your mastery of physics to barrage your opponents from afar with precision-thrown bombs, or simply charge in and toss your enemies off the nearest cliff; all’s fair in love and BombSquad.
@@ -40,8 +27,14 @@
         Bombs away!</p>
     </div>
 
+    <h2>Downloads</h2>
+    <div class="downloads">
+      <a href="https://play.google.com/store/apps/details?id=net.froemling.bombsquad"><img src="/assets/img/gpBanner.png" alt=""></a>
+      <a href="http://appstore.com/mac/bombsquad"><img src="/assets/img/macAppStore.png" alt=""></a>
+      <a href="http://www.amazon.com/gp/product/B00E7NAVZA/ref=mas_pm_bombsquad"><img src="/assets/img/amazon-apps-store-us-black2.png" alt=""></a>
+    </div>
 </section>
-<section class="trailer" [ngClass]="{hidden: !isScrolled}">
+<section *ngIf="isScrolled" class="trailer" >
     <h2>WATCH TRAILER</h2>
     <div class="videos-list container">
       <div class="row">

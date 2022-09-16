@@ -1,33 +1,22 @@
-.carousel-img{
-    width: 100%;
-    max-height: 91vh;
-}
-.carousel-caption{
-    top: 0;
-    margin-top: 62vh;
-    left:28%;
-    right: 0;
-    h3{
-       font-size: 60px;
-       font-weight: bold;
-       color: yellow;
-    }
+
+.header{
+  color: white;
+  h1{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 20px;
+  }
 
 }
-.mob-caption{
-    // position: absolute;
-    padding-top: 30px;
-    left:10;
-    width: 100%;
-    z-index: 3;
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    background-color: black;
-    color: white;
-    img{
-        width: 180px;
-    }
+h3,h2{
+  text-align: center;
+  color: white;
+}
+
+.downloads{
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 // .empty-block{
@@ -41,12 +30,13 @@
     h2{
         text-align: center;
     }
-    .about-text{
-        // width:300px;
-        margin: auto;
-        line-height: 1.9;
-        font-size: 1.1rem;
-    }
+
+}
+.about-text{
+  // width:300px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 1.1rem;
 }
 .trailer{
      background-color: black;
@@ -69,4 +59,11 @@
 }
 .hidden{
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .downloads{
+    flex-direction: column;
+  }
 }
