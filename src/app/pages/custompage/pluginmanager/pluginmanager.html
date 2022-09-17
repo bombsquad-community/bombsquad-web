@@ -1,0 +1,59 @@
+<div class="main">
+  <div class="content">
+
+    <h1>BombSquad Plugin Manager</h1>
+
+
+    <p> Plugin-manager
+      A plugin manager for the game - <a href="https://www.froemling.net/apps/bombsquad">Bombsquad</a> . Plugin manager is a plugin in itself, which makes further modding of your game more convenient by providing easier access to community created content.
+
+      <h2>Features</h2>
+      <ul>
+        <li>
+          Completely open-source - both the plugin-manager and all the plugins in this repository.
+        </li>
+        <li>Works on all platforms.</li>
+        <li>Only deal with plugins and updates targetting your game's current API version.</li>
+        <li>Search for plugins.</li>
+        <li> Add 3rd party plugin sources (use them at your own risk, since they may not be audited!).</li>
+        <li>Enable or disable auto-updates for plugin manager and plugins.</li>
+        <li> Immediately enable installed plugins/minigames without having to restart game.</li>
+        <li> Launch a plugin's settings directly from the plugin manager window.</li>
+        <li>Check out a plugin's source code before installing it.</li>
+        <li>Sync installed plugins with workspaces.</li>
+        <li>Sort plugins by popularity, downloads, rating or some other metric.</li>
+      </ul>
+
+       <h2>Download</h2>
+       Direct download for all platforms <br>
+       <button mat-raised-button color="primary" (click)="onDownload()">Download Now</button> <br>
+       <a href="https://github.com/bombsquad-community/plugin-manager">View it on github </a><br>
+
+      <h2>Installation</h2>
+      There are two different ways the plugin manager can be installed: <br>
+
+      1. Download plugin_manager.py to your mods directory (check it out by going into your game's Settings -> Advanced -> Show Mods Folder). This is the recommended way (see below).
+      <br>
+      2. Another way is to add plugin_manager.py to your workspace. However, plugin manager self-updates will fail when installed using this way since the game will overrwrite the updated plugin manager, with the older version from workspace on the next sync. However, you can manually apply updates by copying the latest plugin manager's source code again to your workspace when using this method.
+
+      <h2>Usage</h2>
+      If installed correctly, you'll see the plugin manager button in your game's settings.
+      <br>
+      <img src="https://user-images.githubusercontent.com/106954762/190505304-519c4b91-2461-42b1-be57-655a3fb0cbe8.gif" alt="">
+      <br>
+
+      That's it, you now have access to a variety of community created content waiting for you to install!
+      <h2>Contributing</h2>
+      Submitting a Plugin
+      In order for a plugin to get accepted to this <a href="https://github.com/bombsquad-community/plugin-manager">official repository</a> , it must target the general game audience and be completely open and readable, not be encoded or encrypted in any form.
+      If your plugin doesn't target the general game audience, you can put your plugin(s) in a GitHub repository and then your plugin(s) can be installed through the custom source option in-game. See 3rd party plugin sources for more information.
+      New plugins are accepted through a pull request. Add your plugin in the minigames, utilities, or the category directory you feel is the most relevant to the type of plugin you're submitting, here. Then add an entry to the category's JSON metadata file.
+      Plugin manager will also show and execute the settings icon if your ba.Plugin export class has a method named on_plugin_manager_prompt; check out the colorscheme plugin as an example and its behaviour when the settings icon is tapped via the plugin manager in-game.
+
+      License
+      Plugin manager's source code is licensed under the MIT license. See LICENSE for more information.
+      Any plugins you submit here are automatically assumed to be licensed under the MIT license, i.e. unless you explicitly specify a different license while submitting a plugin.
+
+
+  </div>
+</div>

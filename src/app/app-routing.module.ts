@@ -52,6 +52,16 @@ const routes: Routes = [
       ogUrl:'https://bombsquad.ga/login'
     }
   },
+  {
+    path:'pluginmanager',
+    loadChildren:() => import ('./pages/custompage/pluginmanager/pluginmanager').then(m => m.PluginManagerModule),
+
+    data:{
+      title:'BombSquad Plugin Manager',
+      description:"One click to install mods for bombsquad, biggest collection of plugins/mods available for bombsquad",
+      ogUrl:'https://bombsquad.ga/pluginmanager'
+    }
+  },
   {path:'**',redirectTo:'home'}
 ];
 
