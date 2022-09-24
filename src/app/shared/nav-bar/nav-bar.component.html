@@ -4,7 +4,7 @@
         <button mat-icon-button (click)="toggleSidenav()" fxShow="true" fxHide.gt-sm>
           <mat-icon>menu</mat-icon>
         </button>
-        <span class="logo"><img src="/assets/img/mainLogo.png" alt=""></span>
+        <span class="logo"><img src="assets/img/mainLogo.png" alt=""></span>
         <span class="menu-spacer"></span>
         <div fxShow="true" fxHide.lt-md> -->
           <!-- The following menu items will be hidden on both SM and XS screen sizes -->
@@ -69,7 +69,7 @@
       </div>
       <div class=" navbar-nav d-flex align-items-center">
         <a *ngIf="!isLoggedIn" class="nav-link" aria-current="page" (click)="noListNav.toggle()" routerLinkActive="active" routerLink="login">Login</a>
-        <div *ngIf="isLoggedIn"><img src="/assets/img/icon_account_v2.svg" width="20px" alt=""> <span class="tag"> {{tag}}</span></div>
+        <div *ngIf="isLoggedIn"><img src="assets/img/icon_account_v2.svg" width="20px" alt=""> <span class="tag"> {{tag}}</span></div>
         <a *ngIf="isLoggedIn" class="nav-link" aria-current="page" (click)="signout()"  routerLink="mods" >Signout</a>
       </div>
     </div>
@@ -120,7 +120,7 @@
         </li>
         <li class="nav-item" *ngIf="isLoggedIn">
           <div  class="nav-link tag">
-            <img src="/assets/img/icon_account_v2.svg" width="20px" alt=""> <span> {{tag}}</span>
+            <img src="assets/img/icon_account_v2.svg" width="20px" alt=""> <span> {{tag}}</span>
           </div>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn">
