@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -29,4 +29,12 @@ jobs:
       - name: npm ci and npm run build
         run: |
           npm ci
-          npm run build:ci
+          npm run clean && npm run build --deploy-url /ballistica-web/browser/
+      - name: Deploy to Github Pages
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: dist/ballistica-web/browser
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
