@@ -29,7 +29,7 @@ jobs:
       - name: npm ci and npm run build
         run: |
           npm ci
-          npm run build:ci --base-href ballistica-web
+          npm run build:ci
       - name: Deploy to Github Pages
         uses: crazy-max/ghaction-github-pages@v3
         with:
@@ -37,4 +37,4 @@ jobs:
           build_dir: dist/ballistica-web/browser
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+

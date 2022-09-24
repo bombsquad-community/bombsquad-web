@@ -12,7 +12,8 @@
     "serve:ssr": "node dist/ballistica-web/server/main.js",
     "build:ssr": "ng build && ng run ballistica-web:server",
     "prerender": "ng run ballistica-web:prerender",
-    "build:ci": "npm run clean && npm run build"
+    "build:ci": "npm run clean && npm run build-deploy",
+    "build-deploy": "ng build --base-href /bombsquad-web/"
   },
   "private": true,
   "dependencies": {
