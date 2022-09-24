@@ -6,8 +6,8 @@ const routes: Routes = [
     path:'home',
     loadChildren:() => import ('./pages/homepage/homepage.component').then(m => m.HomepageModule),
     data:{
-      title:'Home',
-      description:"8 players party game madness , downlaod now",
+      title:'BombSquad Community Site',
+      description:"Welcome to BombSquad Community Website , find all your needs here.",
       ogUrl:'https://bombsquad.ga'
     }
   },
@@ -16,8 +16,8 @@ const routes: Routes = [
     loadChildren:() => import ('./pages/mods/mods.component').then(m => m.ModsModule),
 
     data:{
-      title:'Download Mods',
-      description:"Download Community Mods, Plugins all at one place",
+      title:'Download BombSquad Mods',
+      description:"Download Community Mods, Plugins for all version of BombSquad and install them directly to workspace.",
       ogUrl:'https://bombsquad.ga/mods'
     }
   },
@@ -29,8 +29,8 @@ const routes: Routes = [
     path:'download',
     loadChildren:() => import ('./pages/downloads/downloads.component').then(m => m.DownloadModule),
     data:{
-      title:'Download',
-      description:"Download BombSquad Game , Remote, VR, Server Builds",
+      title:'Download BombSquad Game',
+      description:"Download Latest version of BombSquad Game, Remote, VR, Server Builds for Windows 11, Android, Linux, Macbook",
       ogUrl:'https://bombsquad.ga/download'
     }
    },
@@ -38,8 +38,8 @@ const routes: Routes = [
     path:'servers',
     loadChildren:() => import ('./pages/servers/servers.component').then(m => m.ServersModule),
     data:{
-      title:'Public Servers',
-      description:"BombSquad Public Servers List",
+      title:'BombSquad Public Server List',
+      description:"BombSquad Public Servers List, find queue Id, IP address of all public servers ever hosted for bombsquad.",
       ogUrl:'https://bombsquad.ga/servers'
     }
   },
