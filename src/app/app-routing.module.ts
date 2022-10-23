@@ -44,6 +44,15 @@ const routes: Routes = [
     }
   },
   {
+    path:'players',
+    loadChildren:() => import ('./pages/players/players.component').then(m => m.PlayersModule),
+    data:{
+      title:'BombSquad Players Account',
+      description:"Search Any BombSquad Player Account Details",
+      ogUrl:'https://bombsquad.ga/players'
+    }
+  },
+  {
     path:'login',
     loadChildren:() => import ('./pages/login/login.component').then(m => m.LoginModule),
     data:{

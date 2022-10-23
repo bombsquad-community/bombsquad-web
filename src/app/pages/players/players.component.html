@@ -1,0 +1,41 @@
+<section>
+  <div class="background">
+      <div class="heading">
+          <span>Players Account List</span>
+      </div>
+      <div class="about-page">
+        BombSquad Players Account Details fetch
+      </div>
+      <div class="search-box">
+          <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Search Servers</mat-label>
+              <input matInput type="text" [(ngModel)]="value" (ngModelChange)="valueChange($event)">
+              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetSearch()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+      </div>
+      <div class="mods-list">
+        <div class="loading" *ngIf="isLoading">
+          <mat-spinner></mat-spinner>
+         </div>
+          <div class="mod" *ngFor="let player of players" >
+              <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-weight:550">{{player.accounts[0]}}</h5>
+                     <label>Name:</label>  {{player.names.toString()}} <br>
+                    <label>Pbid: </label> {{player.pbid}} ,<label>Character:</label>  {{player.character}} <br>
+                     <label>Created On:</label> {{  getdate(player.createdOn)}} <br>
+                     <label>Accounts: </label><span *ngFor="let account of player.accounts">{{account}}, </span>
+                  </div>
+              </div>
+          </div>
+          <!-- anyways max size returned from backend is limited to 7 -->
+      <!-- <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page" (page)="pageChanged($event)">
+      </mat-paginator> -->
+
+
+      </div>
+  </div>
+
+</section>
