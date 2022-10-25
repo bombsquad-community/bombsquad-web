@@ -1,0 +1,26 @@
+{
+  "hosting": {
+    "public": "dist/ballistica-web/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "appAssociation": "AUTO",
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "/index.html"
+            },
+            {
+                "source": "/mods/**",
+                "dynamicLinks": true
+            },
+            {
+                "source": "/players",
+                "dynamicLinks": true
+            }
+        ]
+
+  }
+}
