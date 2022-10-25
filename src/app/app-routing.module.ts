@@ -71,6 +71,16 @@ const routes: Routes = [
       ogUrl:'https://bombsquad.ga/pluginmanager'
     }
   },
+  {
+    path:'support',
+    loadChildren:() => import ('./pages/custompage/support/support').then(m => m.SupportModule),
+
+    data:{
+      title:'Donate BombSquad Community',
+      description:"Support US !",
+      ogUrl:'https://bombsquad.ga/support'
+    }
+  },
   {path:'**',redirectTo:'home'}
 ];
 
