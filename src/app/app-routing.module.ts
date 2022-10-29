@@ -6,8 +6,8 @@ const routes: Routes = [
     path:'home',
     loadChildren:() => import ('./pages/homepage/homepage.component').then(m => m.HomepageModule),
     data:{
-      title:'BombSquad Community Site',
-      description:"Welcome to BombSquad Community Website , find all your needs here.",
+      title:'BombSquad Community Site | BCS',
+      description:"Welcome to BombSquad Community Website, find plugins, servers & account details, downloads links and tools.",
       ogUrl:'https://bombsquad.ga'
     }
   },
@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren:() => import ('./pages/mods/mods.component').then(m => m.ModsModule),
 
     data:{
-      title:'Download BombSquad Mods',
+      title:'Download Latest BombSquad Mods',
       description:"Download Community Mods, Plugins for all version of BombSquad and install them directly to workspace.",
       ogUrl:'https://bombsquad.ga/mods'
     }
@@ -48,7 +48,7 @@ const routes: Routes = [
     loadChildren:() => import ('./pages/players/players.component').then(m => m.PlayersModule),
     data:{
       title:'BombSquad Players Account',
-      description:"Search Any BombSquad Player Account Details",
+      description:"Search BombSquad Player Account Details, pb-id, Device accounts",
       ogUrl:'https://bombsquad.ga/players'
     }
   },
@@ -66,7 +66,7 @@ const routes: Routes = [
     loadChildren:() => import ('./pages/custompage/pluginmanager/pluginmanager').then(m => m.PluginManagerModule),
 
     data:{
-      title:'BombSquad Plugin Manager',
+      title:'BombSquad Community Plugin Manager',
       description:"One click to install mods for bombsquad, biggest collection of plugins/mods available for bombsquad",
       ogUrl:'https://bombsquad.ga/pluginmanager'
     }

@@ -75,9 +75,9 @@ export class PlayersComponent implements OnInit {
   }
 
   loadData(){
-    this.playersService.getPlayers(this.value).subscribe(data=>{
+    this.playersService.getPlayers(this.value).subscribe((data:any)=>{
       this.isLoading = false;
-      this.players=data;
+      this.players=[].concat(data);
     })
   }
 
